@@ -1,9 +1,9 @@
 class Solution {
     public boolean checkIfPangram(String sentence) {
-        for (char i = 'a'; i <= 'z'; i++) {
-            if(sentence.contains(String.valueOf(i))) continue;
-            else return false;
+        HashSet<Character> set = new HashSet<>();
+        for (char c : sentence.toCharArray()) {
+            set.add(c);
         }
-        return true;
+        return set.size() == 26; 
     }
 }
